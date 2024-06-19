@@ -32,7 +32,7 @@ public class UserService {
 
         // username unique m?
         if(userRepository.existsByUserName(request.getUserName())){
-            throw new ConflictException("user is already regstered");
+            throw new ConflictException("user is already registered");
         }
 
         Role role =roleRepository.findByName(UserRole.ROLE_STUDENT).orElseThrow(()-> new ResourceNotFoundException("Role Not Found"));
